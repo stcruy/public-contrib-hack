@@ -60,6 +60,7 @@ How
     `$ git remote add origin git@github.com:<YOUR_USERNAME_HERE>/pch-chart.git`  
     `$ git push -u origin master`
   - Done!
+  - Star and share this repo ;)
   - If you want to remove these commits from your chart (perhaps to draw new things):
     - On GitHub: delete your repo `pch-chart`.
     - On your computer: delete the hidden `.git` folder.
