@@ -76,7 +76,7 @@ TL;DR: just fill my chart with ducks!
 `curl -o patternToDates.js https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/patternToDates.js`  
 `curl -o dates.sh https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/dates.sh`  
 `chmod +x dates.sh`  
-  
+` `  
 `git init`  
 `git remote add origin git@github.com:<YOUR_USERNAME_HERE>/pch-chart.git`  
 `node patternToDates.js pattern-ducks.txt`  
