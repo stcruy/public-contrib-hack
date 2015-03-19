@@ -25,8 +25,8 @@ How
     `$ git init`
   - Make a textfile that defines what to draw on your chart,  
     e.g. `pattern-duck.txt`.  
-    It's a matrix where each character corresponds to the yellow/green intensity you want  
-    to add to a day's tile in the chart. (We'll generate X commits for these days).  
+    It's a matrix where each character corresponds to the light/dark green intensity you  
+    want to add to a day's tile in the chart. (We'll generate X commits for these days).  
     The file should have 7 lines (one per weekday, with Sunday on line 1 as on GitHub),  
     that should all have equal length. Just append spaces if needed.  
     Use matrix values:
@@ -34,14 +34,13 @@ How
     - 1: light-green,
     - 2: greener,
     - etc. A to Z corresponds to 10-35, and a-x to 36-59.  
-    
-    Note:
-      - We only increase a tile's intensity, so if a tile wasn't grey before, it'll be more green.
-      - Intensity can become lighter if days with many commits were already on the chart.  
-        Compensate with different values in the pattern file, e.g. try 4->A, 3->5, etc.
-      - I had to experiment a bout to find out when GitHub would switch to yellow/lightgreen tiles,  
-        instead of showing similar shades of green only. I found that the chart needed a pattern  
-        with at least one day of 10 contributions, one of 4, and perhaps several of 3.
+  - Note:
+    - We only increase a tile's intensity, so if a tile wasn't grey before, it'll be more green.
+    - Intensity can become lighter if days with many commits were already on the chart.  
+      Compensate with different values in the pattern file, e.g. try 4->A, 3->5, etc.
+    - I had to experiment a bit to find out when GitHub would switch to faint-green tiles,  
+      instead of showing medium shades of green only. I found that the chart needs a pattern  
+      with at least one day of 10 contributions, one of 4, and perhaps several of 3.
   - Use NodeJS to generate a file with corresponding date-times, e.g.:  
     `$ node patternToDates.js pattern-duck.txt`  
     This will place the drawing rightmost, with its bottom-right tile on the latest Saturday.  
@@ -85,7 +84,7 @@ TL;DR: just fill my chart with ducks!
 
 - To queue a duck that will slide in view during the upcoming weeks, add:  
 `curl -o pattern-duck.txt https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/pattern-duck.txt`  
-`node patternToDates.js pattern-duck.txt "<1ST_SUNDAY_AFTER_MOST_RECENT_SATURDAY_HERE_eg:>15 Mar 2015"`  
+`node patternToDates.js pattern-duck.txt "<FIRST_SUNDAY_AFTER_MOST_RECENT_SATURDAY_HERE__example:>15 Mar 2015"`  
 `./dates.sh`  
 `git push -u origin master`
 
