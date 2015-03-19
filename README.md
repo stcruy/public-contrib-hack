@@ -20,7 +20,7 @@ How
 
 - On your computer:
   - Create an empty folder `pch-chart`.
-  - Go there and add this repo's scripts `patternToDates.js` and `dates.sh`.
+  - Go there and add this repo's scripts `patternToDates.js` and `datesToCommits.sh`.
   - Run:  
     `$ git init`
   - Make a textfile that defines what to draw on your chart,  
@@ -51,10 +51,10 @@ How
     `Oct 07 2014 12:02`  
     `Oct 15 2014 12:01`  
     You can edit this file if you wish.
-  - Add `dates.sh` from `github.com/stcruy/public-contrib-hack`, and make it executable:  
-    `$ chmod +x dates.sh`
+  - Add `datesToCommits.sh` from `github.com/stcruy/public-contrib-hack`, and make it executable:  
+    `$ chmod +x datesToCommits.sh`
   - To generate a commit for each of these datetimes to your `pch-chart` repo, run:  
-    `$ ./dates.sh`
+    `$ ./datesToCommits.sh`
   - Then push these commits to your GitHub repo:  
     `$ git remote add origin git@github.com:<YOUR_USERNAME_HERE>/pch-chart.git`  
     `$ git push -u origin master`
@@ -73,19 +73,19 @@ TL;DR: just fill my chart with ducks!
 `cd pch-chart`  
 `curl -o pattern-ducks.txt https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/pattern-ducks.txt`  
 `curl -o patternToDates.js https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/patternToDates.js`  
-`curl -o dates.sh https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/dates.sh`  
-`chmod +x dates.sh`  
+`curl -o datesToCommits.sh https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/datesToCommits.sh`  
+`chmod +x datesToCommits.sh`  
 ` `  
 `git init`  
 `git remote add origin git@github.com:<YOUR_USERNAME_HERE>/pch-chart.git`  
 `node patternToDates.js pattern-ducks.txt`  
-`./dates.sh`  
+`./datesToCommits.sh`  
 `git push -u origin master`  
 
 - To queue a duck that will slide in view during the upcoming weeks, add:  
 `curl -o pattern-duck.txt https://raw.githubusercontent.com/stcruy/public-contrib-hack/master/pattern-duck.txt`  
 `node patternToDates.js pattern-duck.txt "<FIRST_SUNDAY_AFTER_MOST_RECENT_SATURDAY_HERE__example:>15 Mar 2015"`  
-`./dates.sh`  
+`./datesToCommits.sh`  
 `git push -u origin master`
 
 
