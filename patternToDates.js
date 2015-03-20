@@ -19,7 +19,7 @@ fs.readFile(filename, {encoding: 'ascii'}, function fileReadDone(err, data){
   data = arrayify(data);
   data = buildDates(data);
 
-  fs.writeFile(outputFilename, data, function fileWriteDone(err, data){
+  fs.writeFile(outputFilename, data, function fileWriteDone(err){
     if(err) ex('can\'t write output to %s.', outputFilename);
   });
 
@@ -66,8 +66,9 @@ function getLatestSaturday(){
 
 
 function dateOffSet(date, addDays){
-  var d = new Date(date);  //Copy into object so we don't modify argument "date"'s contents.
-  return new Date(d.setDate( d.getDate() + addDays ));
+  var d = new Date(date);  //Make copy so setDate() doesn't modify argument "date"'s content.
+  d.setDate(d.getDate() + addDays);
+  return d;
 }
 
 
@@ -89,8 +90,8 @@ function buildDates(arr){
       num = arr[i][j];
       if     (num>='0' && num<='9')  num = parseInt(num);
       else if(num>='A' && num<='Z')  num = num.charCodeAt(0) - 55;  // Chars A-Z => 10-35.
-      else if(num>='a' && num<='x')  num = num.charCodeAt(0) - 61;  // Chars a-z => 36-59.
-      else num = 0;  //Also for space char.
+      else if(num>='a' && num<='x')  num = num.charCodeAt(0) - 61;  // Chars a-x => 36-59.
+      else num = 0;  //Also space char is equivalent to a zero.
       for(k=1; k<=num; k++){
         output.push(str + ' 12:' + (k<10?'0':'') + k);
       }

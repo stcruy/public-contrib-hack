@@ -59,14 +59,14 @@ How
     `$ git push -u origin master`
   - Done!
   - ★ Star and share this repo :) ★
-  - - If you want to remove these commits from your chart (perhaps to draw new things):
+  - If you want to remove these commits from your chart (perhaps to draw new things):
     - On GitHub: delete your repo `pch-chart`.
     - On your computer: delete the hidden `.git` folder.
     
 <a name="tldr"></a>
 TL;DR: just fill my chart with ducks!
 -------------------------------------
-- Make GitHub repo `pch-chart`.
+- Make a GitHub repo `pch-chart`.
 - Run in local shell:  
 `mkdir pch-chart`  
 `cd pch-chart`  
